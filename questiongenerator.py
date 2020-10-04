@@ -20,7 +20,7 @@ class QuestionGenerator():
         self.CONTEXT_TOKEN = '<context>'
         self.SEQ_LENGTH = 512
 
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.device = torch.device('cuda:2' if torch.cuda.is_available() else 'cpu')
 
         self.qg_tokenizer = AutoTokenizer.from_pretrained(QG_PRETRAINED)
         self.qg_model = AutoModelForSeq2SeqLM.from_pretrained(QG_PRETRAINED)
